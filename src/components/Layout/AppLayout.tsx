@@ -10,6 +10,8 @@ import {
   BellIcon,
   Bars3Icon,
   XMarkIcon,
+  MapPinIcon,
+  ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/outline';
 import logo from '../../assets/logo.svg';
 
@@ -28,11 +30,14 @@ const AppLayout = () => {
     ...(isAdmin
       ? [
           { name: 'User Management', href: '/users', icon: UsersIcon },
+          { name: 'Job Locations', href: '/job-locations', icon: MapPinIcon },
+          { name: 'Timesheet Review', href: '/timesheet-review', icon: ClipboardDocumentCheckIcon },
           { name: 'Reports', href: '/reports', icon: ChartBarIcon },
+          { name: 'Tasks', href: '/tasks', icon: ClipboardDocumentListIcon },
         ]
-      : []),
-    { name: 'Tasks', href: '/tasks', icon: ClipboardDocumentListIcon },
-    { name: 'Time Tracking', href: '/time-tracking', icon: ClockIcon },
+      : [
+          { name: 'Timesheet Management', href: '/time-management', icon: ClockIcon },
+        ]),
     { name: 'Notifications', href: '/notifications', icon: BellIcon },
     { name: 'Settings', href: '/settings', icon: Cog6ToothIcon },
   ];

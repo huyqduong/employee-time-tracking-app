@@ -6,10 +6,13 @@ import AdminDashboard from './pages/AdminDashboard';
 import TaskManagement from './pages/TaskManagement';
 import UserManagement from './pages/UserManagement';
 import Reports from './pages/Reports';
-import TimeTracking from './pages/TimeTracking';
 import Notifications from './pages/Notifications';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
+import JobLocationManagement from './pages/JobLocationManagement';
+import TimesheetReview from './pages/TimesheetReview';
+import TimeManagement from './pages/TimeManagement';
+import TimesheetManagement from './pages/TimesheetManagement';
 
 // Mock authentication check - replace with your actual auth logic
 const isAuthenticated = () => {
@@ -75,6 +78,22 @@ const App = () => {
             }
           />
           <Route
+            path="job-locations"
+            element={
+              <ProtectedRoute requireAdmin>
+                <JobLocationManagement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="timesheet-review"
+            element={
+              <ProtectedRoute requireAdmin>
+                <TimesheetReview />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="reports"
             element={
               <ProtectedRoute requireAdmin>
@@ -86,12 +105,20 @@ const App = () => {
           {/* Task routes - different views for admin/employee */}
           <Route path="tasks" element={<TaskManagement />} />
 
-          {/* Employee-specific routes */}
-          <Route path="time-tracking" element={<TimeTracking />} />
+          {/* Employee routes */}
+          <Route
+            path="time-management"
+            element={
+              <ProtectedRoute>
+                <TimesheetManagement />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Common routes */}
           <Route path="notifications" element={<Notifications />} />
           <Route path="settings" element={<Settings />} />
+
         </Route>
 
         {/* Catch-all route */}
