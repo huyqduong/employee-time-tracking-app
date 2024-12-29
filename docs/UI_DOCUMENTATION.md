@@ -1,4 +1,4 @@
-# Zip Mechanical Employee Time Tracking App - UI Documentation
+# Employee Time Tracking App - UI Documentation
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -8,10 +8,11 @@
 5. [Navigation Flow](#navigation-flow)
 6. [Design System](#design-system)
 7. [User Roles & Access](#user-roles--access)
+8. [Admin Workflows](#admin-workflows)
 
 ## Overview
 
-The Zip Mechanical Employee Time Tracking App is a web application built using React and TypeScript, designed to help manage employee time tracking, task assignments, and project management for HVAC and refrigeration services.
+The Employee Time Tracking App is a web application built using React and TypeScript, designed to help manage employee time tracking, task assignments, and project management for small business services.
 
 ```mermaid
 graph TD
@@ -152,6 +153,73 @@ Features:
 - `Loading`: Loading indicators
 - `ErrorBoundary`: Error handling component
 
+### 5. Schedule Template System
+The Schedule Template feature allows administrators to create and apply predefined work schedules:
+
+#### ScheduleTemplateApplyModal
+- Purpose: Applies a schedule template to a specific date range
+- Features:
+  - Date range selection
+  - Duration selection (default: 1 week)
+  - Preview of schedule to be applied
+  - Confirmation dialog
+
+### 6. Time Entry Management
+
+#### TimeEntryEditModal
+- Modal for editing individual time entries
+- Supports modification of:
+  - Start and end times
+  - Break duration
+  - Task assignment
+  - Notes
+
+#### TimeEntryForm
+- Reusable form component for time entry creation/editing
+- Validates time entry data
+- Handles break calculations
+
+### 7. Timesheet Management
+
+#### TimesheetEditModal
+- Comprehensive timesheet editing interface
+- Features:
+  - Bulk time entry editing
+  - Weekly hour calculations
+  - Status updates
+
+#### TimesheetRejectModal
+- Handles timesheet rejection workflow
+- Requires rejection reason
+- Notifies employee of rejection
+
+### 8. Task Management
+
+#### TaskAssignmentModal
+- Interface for assigning tasks to employees
+- Features:
+  - Employee selection
+  - Due date setting
+  - Priority level
+  - Task description and requirements
+
+### 9. User Management
+
+#### UserFormModal
+- Handles user creation and editing
+- Fields include:
+  - Personal information
+  - Role assignment
+  - Department assignment
+  - Access permissions
+
+### 10. Authentication
+
+#### LogoutModal
+- Confirmation dialog for user logout
+- Handles session cleanup
+- Option to stay logged in
+
 ## Design System
 
 ### Colors
@@ -193,6 +261,71 @@ Features:
 - Time tracking
 - Task management
 - Personal reports
+
+## Admin Workflows
+
+### 1. Dashboard Management
+The admin dashboard provides a comprehensive overview of the organization:
+```plaintext
++------------------+------------------+
+|   Employee       |    Project       |
+|   Statistics     |    Overview      |
++------------------+------------------+
+|     Department Analytics           |
++----------------------------------+
+|     Activity Timeline            |
++----------------------------------+
+```
+
+Key Features:
+- Real-time statistics display
+- Interactive charts and graphs
+- Department-wise performance tracking
+- Project status monitoring
+
+### 2. User Management Workflow
+Administrators can manage all aspects of employee accounts:
+- User creation and onboarding
+- Role and permission assignment
+- Department allocation
+- Status management (active/inactive)
+- Bulk user operations
+- Advanced filtering and search
+
+### 3. Schedule Management
+Schedule template system for efficient time management:
+- Create reusable schedule templates
+- Apply templates to specific date ranges
+- Preview schedule changes
+- Bulk schedule application
+- Conflict detection and resolution
+
+### 4. Timesheet Administration
+Comprehensive timesheet review and approval system:
+```plaintext
+Employee Submit → Admin Review → Approve/Reject → Notification
+```
+- Batch approval capabilities
+- Rejection with mandatory feedback
+- Historical record keeping
+- Automated notifications
+
+### 5. Task Management
+Centralized task administration:
+- Task creation and assignment
+- Priority and deadline setting
+- Progress tracking
+- Resource allocation
+- Task dependencies management
+
+### 6. Reporting System
+Advanced reporting capabilities:
+- Custom report generation
+- Department analytics
+- Project statistics
+- Time tracking analysis
+- Export functionality (CSV/PDF)
+- Scheduled reports
 
 ## Implementation Notes
 

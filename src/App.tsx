@@ -13,6 +13,7 @@ import JobLocationManagement from './pages/JobLocationManagement';
 import TimesheetReview from './pages/TimesheetReview';
 import TimeManagement from './pages/TimeManagement';
 import TimesheetManagement from './pages/TimesheetManagement';
+import ScheduleManagement from './pages/ScheduleManagement';
 
 // Mock authentication check - replace with your actual auth logic
 const isAuthenticated = () => {
@@ -98,6 +99,14 @@ const App = () => {
             element={
               <ProtectedRoute requireAdmin>
                 <Reports />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="schedule-management"
+            element={
+              <ProtectedRoute requireAdmin>
+                <ScheduleManagement />
               </ProtectedRoute>
             }
           />

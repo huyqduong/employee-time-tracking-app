@@ -26,13 +26,30 @@ export const useScheduledJobLocations = () => {
             city: 'San Francisco',
             state: 'CA',
             zip: '94105',
-            isActive: true
+            isActive: true,
+            requiredEmployeeTypes: [
+              {
+                employeeTypeId: '1',
+                minEmployees: 2,
+                preferredEmployees: 3,
+              },
+            ],
+            operatingHours: {
+              monday: { open: '09:00', close: '17:00' },
+              tuesday: { open: '09:00', close: '17:00' },
+              wednesday: { open: '09:00', close: '17:00' },
+              thursday: { open: '09:00', close: '17:00' },
+              friday: { open: '09:00', close: '17:00' },
+              saturday: { open: '', close: '' },
+              sunday: { open: '', close: '' },
+            },
           },
           startDate: '2024-12-22',
           endDate: '2024-12-22',
           startTime: '09:00',
           endTime: '17:00',
-          status: 'scheduled'
+          status: 'scheduled',
+          notes: 'Regular cleaning schedule',
         },
         // Add more mock data as needed
       ];

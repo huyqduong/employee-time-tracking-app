@@ -12,6 +12,7 @@ import {
   XMarkIcon,
   MapPinIcon,
   ClipboardDocumentCheckIcon,
+  CalendarIcon,
 } from '@heroicons/react/24/outline';
 import logo from '../../assets/logo.svg';
 
@@ -31,6 +32,7 @@ const AppLayout = () => {
       ? [
           { name: 'User Management', href: '/users', icon: UsersIcon },
           { name: 'Job Locations', href: '/job-locations', icon: MapPinIcon },
+          { name: 'Schedule Management', href: '/schedule-management', icon: CalendarIcon },
           { name: 'Timesheet Review', href: '/timesheet-review', icon: ClipboardDocumentCheckIcon },
           { name: 'Reports', href: '/reports', icon: ChartBarIcon },
           { name: 'Tasks', href: '/tasks', icon: ClipboardDocumentListIcon },

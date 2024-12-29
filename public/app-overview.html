@@ -3,245 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClockFlow - Employee Time Tracking App Overview</title>
+    <title>Employee Time Tracking App - System Overview</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
         .feature-card:hover {
             transform: translateY(-5px);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .workflow-step {
+            position: relative;
+        }
+        .workflow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background-color: #e5e7eb;
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="logo.svg" alt="ClockFlow" class="h-12 w-auto" onerror="this.src='../src/assets/logo.svg'">
-                <h1 class="ml-4 text-2xl font-bold text-gray-900">ClockFlow - Employee Time Tracking App</h1>
-            </div>
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Employee Time Tracking System</h1>
+            <p class="mt-2 text-gray-600">Streamline Your Workforce Management</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="bg-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base font-semibold text-primary-600 tracking-wide uppercase">Streamline Your Operations</h2>
-                <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    Time Tracking Made Simple
-                </p>
-                <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-                    A versatile solution for managing employee time, tasks, and projects across all service industries.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Key Features -->
-    <div class="py-12 bg-gray-50">
+    <!-- Main Features -->
+    <div class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-3xl font-extrabold text-gray-900">Key Features</h2>
-                <p class="mt-4 text-lg text-gray-500">Everything you need to manage your workforce efficiently</p>
+                <p class="mt-4 text-lg text-gray-600">Comprehensive tools for efficient workforce management</p>
             </div>
 
             <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Time Tracking -->
-                <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-                    <div class="text-primary-600 text-2xl mb-4">⏰</div>
-                    <h3 class="text-xl font-semibold text-gray-900">Time Tracking</h3>
-                    <ul class="mt-4 space-y-2 text-gray-500">
-                        <li>• Easy clock in/out functionality</li>
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">⏰ Time Tracking</div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Intuitive clock in/out interface</li>
+                        <li>• Break time management</li>
                         <li>• Real-time tracking</li>
-                        <li>• Break management</li>
-                        <li>• Overtime tracking</li>
+                        <li>• Mobile-friendly access</li>
+                    </ul>
+                </div>
+
+                <!-- Schedule Management -->
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">📅 Schedule Management</div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Reusable schedule templates</li>
+                        <li>• Bulk schedule application</li>
+                        <li>• Conflict detection</li>
+                        <li>• Schedule preview</li>
                     </ul>
                 </div>
 
                 <!-- Task Management -->
-                <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-                    <div class="text-primary-600 text-2xl mb-4">📋</div>
-                    <h3 class="text-xl font-semibold text-gray-900">Task Management</h3>
-                    <ul class="mt-4 space-y-2 text-gray-500">
-                        <li>• Create and assign tasks</li>
-                        <li>• Track progress</li>
-                        <li>• Set priorities</li>
-                        <li>• Due date management</li>
-                    </ul>
-                </div>
-
-                <!-- Reporting -->
-                <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-                    <div class="text-primary-600 text-2xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold text-gray-900">Reports & Analytics</h3>
-                    <ul class="mt-4 space-y-2 text-gray-500">
-                        <li>• Department analytics</li>
-                        <li>• Employee performance</li>
-                        <li>• Project timelines</li>
-                        <li>• Custom report generation</li>
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">✓ Task Management</div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Task assignment</li>
+                        <li>• Priority settings</li>
+                        <li>• Progress tracking</li>
+                        <li>• Dependencies handling</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- User Roles -->
-    <div class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">User Roles & Capabilities</h2>
-            
-            <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
-                <!-- Admin Role -->
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Administrator</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            User Management
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Project Creation & Assignment
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Report Generation
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            System Configuration
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Employee Role -->
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Employee</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Time Clock Management
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Task View & Updates
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Personal Reports
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Profile Management
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- App Flow -->
+    <!-- Admin Features -->
     <div class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Application Flow</h2>
-            
-            <div class="space-y-8">
-                <!-- Login Flow -->
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">1. Authentication</h3>
-                    <div class="pl-6 text-gray-600">
-                        <p>• Secure login with email and password</p>
-                        <p>• Role-based access control</p>
-                        <p>• Automatic redirect to appropriate dashboard</p>
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900">Administrative Tools</h2>
+                <p class="mt-4 text-lg text-gray-600">Powerful management capabilities for administrators</p>
+            </div>
+
+            <div class="mt-12 grid gap-8 grid-cols-1 lg:grid-cols-2">
+                <!-- Dashboard -->
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">📊 Analytics Dashboard</div>
+                    <div class="space-y-4">
+                        <p class="text-gray-600">Real-time insights into your workforce:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Employee statistics</li>
+                            <li>• Project overview</li>
+                            <li>• Department analytics</li>
+                            <li>• Activity monitoring</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Employee Workflow -->
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">2. Employee Workflow</h3>
-                    <div class="pl-6 text-gray-600">
-                        <p>• Clock in/out for shifts</p>
-                        <p>• View and update assigned tasks</p>
-                        <p>• Submit time entries</p>
-                        <p>• View notifications and updates</p>
-                    </div>
-                </div>
-
-                <!-- Admin Workflow -->
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">3. Administrative Workflow</h3>
-                    <div class="pl-6 text-gray-600">
-                        <p>• Monitor employee time entries</p>
-                        <p>• Manage tasks and assignments</p>
-                        <p>• Generate and export reports</p>
-                        <p>• Handle user management</p>
-                    </div>
-                </div>
-
-                <!-- Reporting -->
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">4. Reporting & Analytics</h3>
-                    <div class="pl-6 text-gray-600">
-                        <p>• Real-time dashboard updates</p>
-                        <p>• Customizable report generation</p>
-                        <p>• Department performance metrics</p>
-                        <p>• Export capabilities (PDF, Excel)</p>
+                <!-- User Management -->
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">👥 User Management</div>
+                    <div class="space-y-4">
+                        <p class="text-gray-600">Complete employee lifecycle management:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Role assignment</li>
+                            <li>• Department allocation</li>
+                            <li>• Status management</li>
+                            <li>• Bulk operations</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Benefits -->
+    <!-- Workflow -->
     <div class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Benefits</h2>
-            
-            <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Increased Efficiency</h3>
-                    <p class="text-gray-600">Streamline time tracking and task management processes, reducing administrative overhead.</p>
-                </div>
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900">Timesheet Workflow</h2>
+                <p class="mt-4 text-lg text-gray-600">Streamlined approval process</p>
+            </div>
 
-                <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Better Visibility</h3>
-                    <p class="text-gray-600">Real-time insights into employee activities, project progress, and department performance.</p>
+            <div class="mt-12 flex justify-between items-center flex-wrap">
+                <div class="workflow-step text-center p-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📝</span>
+                    </div>
+                    <div class="font-medium">Submit</div>
                 </div>
+                <div class="workflow-step text-center p-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">👀</span>
+                    </div>
+                    <div class="font-medium">Review</div>
+                </div>
+                <div class="workflow-step text-center p-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">✅</span>
+                    </div>
+                    <div class="font-medium">Approve</div>
+                </div>
+                <div class="workflow-step text-center p-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📨</span>
+                    </div>
+                    <div class="font-medium">Notify</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Improved Compliance</h3>
-                    <p class="text-gray-600">Accurate time tracking and reporting helps maintain labor law compliance.</p>
+    <!-- Reporting -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900">Advanced Reporting</h2>
+                <p class="mt-4 text-lg text-gray-600">Data-driven decision making</p>
+            </div>
+
+            <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">Department Analytics</div>
+                    <p class="text-gray-600">Track performance and resource allocation across departments</p>
+                </div>
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">Project Statistics</div>
+                    <p class="text-gray-600">Monitor project progress and time utilization</p>
+                </div>
+                <div class="feature-card bg-white rounded-lg p-6">
+                    <div class="text-xl font-semibold mb-4">Custom Reports</div>
+                    <p class="text-gray-600">Generate tailored reports with export options</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <img src="logo.svg" alt="Zip Mechanical" class="h-12 w-auto mx-auto mb-4" onerror="this.src='../src/assets/logo.svg'">
-                <p class="text-base text-gray-400">
-                    2024 - L2L AI Hub. All rights reserved.
-                </p>
-            </div>
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500"> 2024 Employee Time Tracking System. All rights reserved.</p>
         </div>
     </footer>
 </body>
